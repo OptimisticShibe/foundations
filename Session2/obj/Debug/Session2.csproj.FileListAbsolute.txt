@@ -1,0 +1,6 @@
+c:\source\foundations\Session2\bin\Debug\Session2.exe.config
+c:\source\foundations\Session2\bin\Debug\Session2.exe
+c:\source\foundations\Session2\bin\Debug\Session2.pdb
+c:\source\foundations\Session2\obj\Debug\Session2.csprojResolveAssemblyReference.cache
+c:\source\foundations\Session2\obj\Debug\Session2.exe
+c:\source\foundations\Session2\obj\Debug\Session2.pdb
