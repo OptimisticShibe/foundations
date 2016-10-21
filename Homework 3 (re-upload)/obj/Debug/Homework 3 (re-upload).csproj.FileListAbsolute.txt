@@ -1,0 +1,6 @@
+c:\source\foundations\Homework 3 (re-upload)\bin\Debug\Homework 3 (re-upload).exe.config
+c:\source\foundations\Homework 3 (re-upload)\bin\Debug\Homework 3 (re-upload).exe
+c:\source\foundations\Homework 3 (re-upload)\bin\Debug\Homework 3 (re-upload).pdb
+c:\source\foundations\Homework 3 (re-upload)\obj\Debug\Homework 3 (re-upload).csprojResolveAssemblyReference.cache
+c:\source\foundations\Homework 3 (re-upload)\obj\Debug\Homework 3 (re-upload).exe
+c:\source\foundations\Homework 3 (re-upload)\obj\Debug\Homework 3 (re-upload).pdb
