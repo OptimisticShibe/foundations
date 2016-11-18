@@ -1,0 +1,6 @@
+c:\source\foundations\Class 8 - Building a calculator\bin\Debug\Class 8 - Building a calculator.exe.config
+c:\source\foundations\Class 8 - Building a calculator\bin\Debug\Class 8 - Building a calculator.exe
+c:\source\foundations\Class 8 - Building a calculator\bin\Debug\Class 8 - Building a calculator.pdb
+c:\source\foundations\Class 8 - Building a calculator\obj\Debug\Class 8 - Building a calculator.csprojResolveAssemblyReference.cache
+c:\source\foundations\Class 8 - Building a calculator\obj\Debug\Class 8 - Building a calculator.exe
+c:\source\foundations\Class 8 - Building a calculator\obj\Debug\Class 8 - Building a calculator.pdb

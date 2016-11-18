@@ -1,0 +1,6 @@
+c:\source\foundations\Homework 6\bin\Debug\Homework 6.exe.config
+C:\source\foundations\Homework 6\bin\Debug\Homework 6.exe
+C:\source\foundations\Homework 6\bin\Debug\Homework 6.pdb
+C:\source\foundations\Homework 6\obj\Debug\Homework 6.csprojResolveAssemblyReference.cache
+C:\source\foundations\Homework 6\obj\Debug\Homework 6.exe
+C:\source\foundations\Homework 6\obj\Debug\Homework 6.pdb

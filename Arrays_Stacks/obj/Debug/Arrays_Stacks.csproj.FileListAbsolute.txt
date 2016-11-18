@@ -1,0 +1,6 @@
+c:\source\foundations\Arrays_Stacks\bin\Debug\Arrays_Stacks.exe.config
+c:\source\foundations\Arrays_Stacks\bin\Debug\Arrays_Stacks.exe
+c:\source\foundations\Arrays_Stacks\bin\Debug\Arrays_Stacks.pdb
+c:\source\foundations\Arrays_Stacks\obj\Debug\Arrays_Stacks.csprojResolveAssemblyReference.cache
+c:\source\foundations\Arrays_Stacks\obj\Debug\Arrays_Stacks.exe
+c:\source\foundations\Arrays_Stacks\obj\Debug\Arrays_Stacks.pdb
