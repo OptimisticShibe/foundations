@@ -18,13 +18,16 @@ struct ItemData
 
 
 class MyInventory
+
 {
     public static void Main()
     {
         // use an integer to keep track of the count of items in your inventory					
-        var arrayCount = 0;
+        int arrayCount = 0;
         // create an array of your ItemData struct
         ItemData[] inventory = new ItemData[10];
+
+
         // use a never ending loop that shows the user what options they can select 
         Boolean doNotEnd = true; //*boolean variable to control quit*
         while (doNotEnd == true)
@@ -41,9 +44,11 @@ class MyInventory
             list[3] = "4. List all items in database";
             list[4] = "5. Quit";
 
+            Console.Write("Please choose an option (1-5):\n");
+
             foreach (string optionList in list) //*Foreach loop to list formatted option list*
             {
-                Console.Write("Please choose an option (1-5):\n {0}\n", optionList);
+                Console.Write("{0}\n", optionList);
             }
 
             // read the user's input and then create what case it falls
@@ -66,7 +71,7 @@ class MyInventory
                         string newItemDescription = Console.ReadLine();
                         inventory[arrayCount].sDescription = newItemDescription;
 
-                        Console.Write("Enter item price:");
+                        Console.Write("Enter item price: $");
                         string newItemPrice = Console.ReadLine();
                         inventory[arrayCount].dblPricePerItem = double.Parse(newItemPrice);
 
@@ -74,7 +79,7 @@ class MyInventory
                         string newItemQuantityStr = Console.ReadLine();
                         inventory[arrayCount].iQuantityOnHand = int.Parse(newItemQuantityStr);
 
-                        Console.Write("Enter our cost per item:");
+                        Console.Write("Enter our cost per item: $");
                         string newItemOurCostStr = Console.ReadLine();
                         inventory[arrayCount].dblOurCostPerItem = double.Parse(newItemOurCostStr);
 
@@ -87,16 +92,98 @@ class MyInventory
 
                 case 2: //change items in the list if this option is selected
                     {
-                        Console.Write("Please enter an item ID No:");
+                        Console.Write("Please enter an item ID No: ");
                         string strchgid = Console.ReadLine();
                         int chgid = int.Parse(strchgid);
                         bool fFound = false;
+
+
 
                         for (int x = 0; x < arrayCount; x++)
                         {
                             if (inventory[x].itemIDNo == chgid)
                             {
                                 fFound = true;
+                                string[] changeList = new string[5]; //thinking I should just copy the "add" function
+                                //except with an array replacement feature to implement the "change" instead of just adding
+
+                                changeList[0] = "1. Order Number";
+                                changeList[1] = "2. Item Description";
+                                changeList[2] = "3. Price per item";
+                                changeList[3] = "4. Quantity on hand";
+                                changeList[4] = "5. Cost per item";
+
+                                Console.Write("What would you like to change? (1-5)\n");
+
+                                foreach (string choice in changeList) //*Foreach loop to list formatted option list*
+                                {
+                                    Console.Write("{0}\n", choice);
+                                }
+
+                                string rox = Console.ReadLine();   // read user's input	
+
+                                var roxi = int.Parse(rox); // convert the given string to integer to match our case types shown below
+
+                                Console.WriteLine(); // provide an extra blank line on screen
+
+                                switch (roxi) //VARIABLES may not work (might be gloabl??)
+                                {
+                                    case 1: //change item number
+                                        {
+                                            Console.Write("Enter the item number:");
+                                            string newItemStr = Console.ReadLine();
+                                            inventory[x].itemIDNo = int.Parse(newItemStr);
+
+                                            break;
+                                        }
+                                    case 2: //change description
+                                        {
+                                            Console.Write("Enter item description:");
+                                            string newItemDescription = Console.ReadLine();
+                                            inventory[x].sDescription = newItemDescription;
+
+                                            break;
+                                        }
+                                    case 3: //change price
+                                        {
+                                            Console.Write("Enter item price: $");
+                                            string newItemPrice = Console.ReadLine();
+                                            inventory[x].dblPricePerItem = double.Parse(newItemPrice);
+
+                                            break;
+                                        }
+                                    case 4: //change Quantity
+                                        {
+                                            Console.Write("Enter quantity of item:");
+                                            string newItemQuantityStr = Console.ReadLine();
+                                            inventory[x].iQuantityOnHand = int.Parse(newItemQuantityStr);
+
+                                            break;
+                                        }
+                                    case 5: //change cost
+                                        {
+                                            Console.Write("Enter our cost per item: $");
+                                            string newItemOurCostStr = Console.ReadLine();
+                                            inventory[x].dblOurCostPerItem = double.Parse(newItemOurCostStr);
+
+                                            break;
+                                        }
+                                    default:
+                                        {
+                                            Console.Write("Please select a valid option.");
+                                            break;
+                                        }
+
+                                       
+                                        
+
+                                }
+                                arrayCount--;
+                                for (; x < arrayCount; x++)
+                                {
+                                    inventory[x] = inventory[x + 1];
+                                }
+
                                 // code to show what has to happen if the item in the list is found
                                 // reset the count to show a new count for your list 
                                 // (Note: your list is now increased by one item)
@@ -118,14 +205,19 @@ class MyInventory
                         int newid = int.Parse(strnewid);
                         bool fDeleted = false;
 
-                        for (int x = 0; x < arrayCount; x++)
+                        for (int x = 0; x < arrayCount; x++) //searches for position of item in array
                         {
-                            if (inventory[x].itemIDNo == newid)
+                            if (inventory[x].itemIDNo == newid) //when item's spot in array found, run this code
                            { 
                                 fDeleted = true;
                                 // delete the item if you found it
                                 // reset the count to show a new count for your list 
-                                //(Note: your list is now reduced by one item)								
+                                arrayCount--; //(Note: your list is now reduced by one item)	
+                                for (; x < arrayCount; x++) //This replaces the old array with the new array, starting by moving the old item
+                                {                           //to the left one (essentially deleting it) 
+                                    inventory[x] = inventory[x + 1];
+                                }
+                                break;
                             }
                         }
 
@@ -143,11 +235,31 @@ class MyInventory
 
                 case 4: //list all items in current database if this option is selected
                     {
-                        Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
-                        Console.WriteLine("-----  ------  --------------------  -----  ---  ----  -----");
+                        //Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
+                        //Console.WriteLine("-----  7------  15--------------------  37-----  44---  49----  55-----");
+                        string columns = String.Format("{0,0} {1, -7} {2, -15} {3, -37} {4, -44} {5, -49} {6, -55}",
+                            "Item#", "ItemID", "Description", "Price", "QOH", "Cost", "Value");
+                        string lines = String.Format("{0,0} {1, -7} {2, -15} {3, -37} {4, -44} {5, -49} {6, -55}",
+                            "-----", "------", "--------------------", "-----", "---", "----", "-----");
+                        Console.WriteLine(columns);
+                        Console.WriteLine(lines);
+                        for (int y = 0; y < arrayCount; y++)
+                        {
+                            string listing = String.Format("{0,0} {1, -7} {2, -15} {3, -37} {4, -44} {5, -49} {6, -55}\n",
+                            y +1, inventory[y].itemIDNo, inventory[y].sDescription, inventory[y].dblPricePerItem, inventory[y].iQuantityOnHand,
+                            inventory[y].dblOurCostPerItem, inventory[y].dblValueOfItem);
+                            Console.Write(listing);
+                            //write 5 loops for each thing? And then a bigger loop to make it repeat for every iteration?
+                            /*Console.Write("{0, 0}", y + 1);
+                            Console.Write("  {0, 6}", inventory[y].itemIDNo);
+                            Console.Write("  {0, 6}", inventory[y].sDescription);
+                            Console.Write("  ${0, 6}", inventory[y].dblPricePerItem);
+                            Console.Write("  {0, 6}", inventory[y].iQuantityOnHand);
+                            Console.Write("  ${0, 6}", inventory[y].dblOurCostPerItem);
+                            Console.Write("  ${0, 6}", inventory[y].dblValueOfItem);*/
 
-                        // code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
-
+                            // code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
+                        }
                         break;
                     }
 
@@ -173,5 +285,4 @@ class MyInventory
             }
         }
     }
-}
 }

@@ -1,1 +1,6 @@
 c:\source\foundations\FinalProject\bin\Debug\FinalProject.exe.config
+C:\source\foundations\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\source\foundations\FinalProject\bin\Debug\FinalProject.exe
+C:\source\foundations\FinalProject\bin\Debug\FinalProject.pdb
+C:\source\foundations\FinalProject\obj\Debug\FinalProject.exe
+C:\source\foundations\FinalProject\obj\Debug\FinalProject.pdb
