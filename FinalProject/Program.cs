@@ -63,6 +63,11 @@ class MyInventory
             {
                 case 1: // add an item to the list if this option is selected
                     {
+                        if (arrayCount >= 100) //Prevents user from adding too many items
+                        {
+                            Console.WriteLine("Inventory database cannot exceed 100 items. Please remove or change an existing item before adding more.");
+                            break;
+                        }
                         Console.Write("Enter the item number:");
                         string newItemStr = Console.ReadLine();
                         inventory[arrayCount].itemIDNo = int.Parse(newItemStr);
@@ -83,7 +88,7 @@ class MyInventory
                         string newItemOurCostStr = Console.ReadLine();
                         inventory[arrayCount].dblOurCostPerItem = double.Parse(newItemOurCostStr);
 
-                        //***THIS LINE MIGHT NOT WORK***
+                        
                         inventory[arrayCount].dblValueOfItem = inventory[arrayCount].iQuantityOnHand * inventory[arrayCount].dblPricePerItem;
 
                         arrayCount++;
@@ -178,11 +183,11 @@ class MyInventory
                                         
 
                                 }
-                                arrayCount--;
+                                /*arrayCount--;
                                 for (; x < arrayCount; x++)
                                 {
                                     inventory[x] = inventory[x + 1];
-                                }
+                                }*/
 
                                 // code to show what has to happen if the item in the list is found
                                 // reset the count to show a new count for your list 
@@ -200,6 +205,11 @@ class MyInventory
 
                 case 3: //delete items in the list if this option is selected
                     {
+                        if (arrayCount == 0)
+                        {
+                            Console.WriteLine("No items stored.");
+                            break;
+                        }
                         Console.Write("Please enter an item ID No:");
                         string strnewid = Console.ReadLine();
                         int newid = int.Parse(strnewid);
@@ -237,27 +247,19 @@ class MyInventory
                     {
                         //Console.WriteLine("Item#  ItemID  Description           Price  QOH  Cost  Value");
                         //Console.WriteLine("-----  7------  15--------------------  37-----  44---  49----  55-----");
-                        string columns = String.Format("{0,0} {1, -7} {2, -15} {3, -37} {4, -44} {5, -49} {6, -55}",
-                            "Item#", "ItemID", "Description", "Price", "QOH", "Cost", "Value");
-                        string lines = String.Format("{0,0} {1, -7} {2, -15} {3, -37} {4, -44} {5, -49} {6, -55}",
-                            "-----", "------", "--------------------", "-----", "---", "----", "-----");
+                        string columns = String.Format("{0,-10} {1, -10} {2, -10} {3, -10} {4, -10} {5, -10} {6, -10}",
+                            "Item#", "ItemID", "Descr.", "Price", "QOH", "Cost", "Value");
+                        string lines = String.Format("{0,-10} {1, -10} {2, -10} {3, -10} {4, -10} {5, -10} {6, -10}",
+                            "-----", "------", "-------", "-----", "---", "----", "-----");
                         Console.WriteLine(columns);
                         Console.WriteLine(lines);
                         for (int y = 0; y < arrayCount; y++)
                         {
-                            string listing = String.Format("{0,0} {1, -7} {2, -15} {3, -37} {4, -44} {5, -49} {6, -55}\n",
+                            string listing = String.Format("{0,-10} {1, -10} {2, -10} {3, -10} {4, -10} {5, -10} {6, -10}\n",
                             y +1, inventory[y].itemIDNo, inventory[y].sDescription, inventory[y].dblPricePerItem, inventory[y].iQuantityOnHand,
                             inventory[y].dblOurCostPerItem, inventory[y].dblValueOfItem);
                             Console.Write(listing);
-                            //write 5 loops for each thing? And then a bigger loop to make it repeat for every iteration?
-                            /*Console.Write("{0, 0}", y + 1);
-                            Console.Write("  {0, 6}", inventory[y].itemIDNo);
-                            Console.Write("  {0, 6}", inventory[y].sDescription);
-                            Console.Write("  ${0, 6}", inventory[y].dblPricePerItem);
-                            Console.Write("  {0, 6}", inventory[y].iQuantityOnHand);
-                            Console.Write("  ${0, 6}", inventory[y].dblOurCostPerItem);
-                            Console.Write("  ${0, 6}", inventory[y].dblValueOfItem);*/
-
+                            
                             // code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
                         }
                         break;
@@ -272,7 +274,7 @@ class MyInventory
                         if (strresp == "y")
                         {
                             doNotEnd = false; //*using Boolean from While loop to end program*
-                                              //optx=0;	//as long as it is not 5, the process is not breaking	
+                                             
                         }
                         break;
                     }
