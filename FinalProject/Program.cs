@@ -88,7 +88,7 @@ class MyInventory
                         string newItemOurCostStr = Console.ReadLine();
                         inventory[arrayCount].dblOurCostPerItem = double.Parse(newItemOurCostStr);
 
-                        
+
                         inventory[arrayCount].dblValueOfItem = inventory[arrayCount].iQuantityOnHand * inventory[arrayCount].dblPricePerItem;
 
                         arrayCount++;
@@ -179,8 +179,8 @@ class MyInventory
                                             break;
                                         }
 
-                                       
-                                        
+
+
 
                                 }
                                 /*arrayCount--;
@@ -218,7 +218,7 @@ class MyInventory
                         for (int x = 0; x < arrayCount; x++) //searches for position of item in array
                         {
                             if (inventory[x].itemIDNo == newid) //when item's spot in array found, run this code
-                           { 
+                            {
                                 fDeleted = true;
                                 // delete the item if you found it
                                 // reset the count to show a new count for your list 
@@ -256,10 +256,10 @@ class MyInventory
                         for (int y = 0; y < arrayCount; y++)
                         {
                             string listing = String.Format("{0,-10} {1, -10} {2, -10} {3, -10} {4, -10} {5, -10} {6, -10}\n",
-                            y +1, inventory[y].itemIDNo, inventory[y].sDescription, inventory[y].dblPricePerItem, inventory[y].iQuantityOnHand,
+                            y + 1, inventory[y].itemIDNo, inventory[y].sDescription, inventory[y].dblPricePerItem, inventory[y].iQuantityOnHand,
                             inventory[y].dblOurCostPerItem, inventory[y].dblValueOfItem);
                             Console.Write(listing);
-                            
+
                             // code in this block. Use the above line format as a guide for printing or displaying the items in your list right under it
                         }
                         break;
@@ -274,7 +274,7 @@ class MyInventory
                         if (strresp == "y")
                         {
                             doNotEnd = false; //*using Boolean from While loop to end program*
-                                             
+
                         }
                         break;
                     }
