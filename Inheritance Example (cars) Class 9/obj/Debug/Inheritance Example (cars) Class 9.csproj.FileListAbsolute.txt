@@ -1,0 +1,6 @@
+c:\source\foundations\Inheritance Example (cars) Class 9\bin\Debug\Inheritance Example (cars) Class 9.exe.config
+c:\source\foundations\Inheritance Example (cars) Class 9\bin\Debug\Inheritance Example (cars) Class 9.exe
+c:\source\foundations\Inheritance Example (cars) Class 9\bin\Debug\Inheritance Example (cars) Class 9.pdb
+c:\source\foundations\Inheritance Example (cars) Class 9\obj\Debug\Inheritance Example (cars) Class 9.csprojResolveAssemblyReference.cache
+c:\source\foundations\Inheritance Example (cars) Class 9\obj\Debug\Inheritance Example (cars) Class 9.exe
+c:\source\foundations\Inheritance Example (cars) Class 9\obj\Debug\Inheritance Example (cars) Class 9.pdb
