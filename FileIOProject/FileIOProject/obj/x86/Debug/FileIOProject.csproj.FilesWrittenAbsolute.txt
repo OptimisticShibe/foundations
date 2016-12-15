@@ -1,0 +1,5 @@
+/Users/Rafiq/Projects/FileIOProject/FileIOProject/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/Rafiq/Projects/FileIOProject/FileIOProject/bin/Debug/FileIOProject.exe.mdb
+/Users/Rafiq/Projects/FileIOProject/FileIOProject/bin/Debug/FileIOProject.exe
+/Users/Rafiq/Projects/FileIOProject/FileIOProject/obj/x86/Debug/FileIOProject.exe
+/Users/Rafiq/Projects/FileIOProject/FileIOProject/obj/x86/Debug/FileIOProject.exe.mdb
